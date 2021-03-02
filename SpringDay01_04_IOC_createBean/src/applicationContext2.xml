@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="person02" class="cn.tedu.domain.Person02">
+        <!--
+            index:第几个参数
+            name:叫什么名字的参数
+            type:什么类型的参数
+            value:给什么值(基本数据类型、String类型)
+            ref:给什么值(引用类型)
+            **以上参数并不需要都设置，配几个能让Spring确定是哪个参数即可
+        -->
+        <constructor-arg index="0" name="name" type="java.lang.String" value="zs"/>
+        <constructor-arg index="1" name="age" type="int" value="18"/>
+    </bean>
+</beans>

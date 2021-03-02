@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+
+    <!--
+        init-method:配置初始化方法，bean创建后立即调用执行初始化操作
+        destroy-method:配置销毁方法，bean销毁之前立即调用执行销毁操作
+    -->
+    <bean id="daoUtils" class="cn.tedu.domain.DaoUtils"
+        init-method="myInit" destroy-method="myDestory"/>
+
+</beans>

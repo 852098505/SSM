@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        autowire:
+            byName
+                对于自定义bean类型的属性注入
+                根据当前要注入的bean属性名 找 同名id的bean进行注入
+                找到唯一的就注入
+                找不到不注入
+                不可能找到多个
+            byType
+                对于自定义bean类型的属性注入
+                根据当前要注入的bean的类型 找 同类型的bean进行注入
+                找到唯一的就注入
+                找不到不注入
+                有可能找到多个，找到多个抛出异常NoUniqueBeanDefinitionException
+    -->
+
+    <bean id="hero" class="cn.tedu.domain.Hero" autowire="byName">
+        <property name="name" value="安其拉"/>
+        <property name="age" value="18"/>
+    </bean>
+
+    <bean id="dog" class="cn.tedu.domain.Dog">
+        <property name="name" value="哮天犬"/>
+        <property name="age" value="500"/>
+    </bean>
+
+    <bean id="cat" class="cn.tedu.domain.Cat">
+        <property name="name" value="加菲猫"/>
+        <property name="age" value="8"/>
+    </bean>
+    <bean id="cat2" class="cn.tedu.domain.Cat">
+        <property name="name" value="大脸猫"/>
+        <property name="age" value="5"/>
+    </bean>
+</beans>

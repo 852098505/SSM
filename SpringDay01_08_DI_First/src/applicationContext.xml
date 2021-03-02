@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="hero" class="cn.tedu.domain.Hero">
+        <!--基本数据类型、String类型-->
+        <property name="name" value="安其拉"/>
+        <property name="age" value="18"/>
+        <!--集合类型、Map类型、Properties类型-->
+        <property name="list">
+            <list>
+                <value>丢火球</value>
+                <value>丢大火球</value>
+                <value>兹流~~~</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>中单</value>
+                <value>上单</value>
+                <value>ADC</value>
+                <value>打野</value>
+                <value>辅助</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="teacher" value="老夫子"/>
+                <entry key="husband" value="亚瑟"/>
+            </map>
+        </property>
+        <property name="props">
+            <props>
+                <prop key="p1">v1</prop>
+                <prop key="p2">v2</prop>
+                <prop key="p3">v3</prop>
+            </props>
+        </property>
+        <!--自定义bean类型-->
+        <property name="dog" ref="dog"/>
+        <property name="cat" ref="cat"/>
+    </bean>
+    <bean id="dog" class="cn.tedu.domain.Dog">
+        <property name="name" value="哮天犬"/>
+        <property name="age" value="500"/>
+    </bean>
+    <bean id="cat" class="cn.tedu.domain.Cat">
+        <property name="name" value="加菲猫"/>
+        <property name="age" value="8"/>
+    </bean>
+</beans>

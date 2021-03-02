@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+    default-lazy-init="true"
+>
+    <!--
+        lazy-init:
+            将bean配置为懒加载模式，
+            则单例bean不再在容器初始化时创建，而是将创建的时机延后到第一次使用该bean时
+            避免了在容器初始化时创建大量的单例bean，节省启动时间 和 空间
+            懒加载只是延后了创建时机，该是单例的bean还是单例的bean
+            多例bean配置懒加载没有意义
+    -->
+    <bean id="person" class="cn.tedu.domain.Person" lazy-init="true"/>
+</beans>
